@@ -1,0 +1,30 @@
+query GetCharacters($page: Int!) {
+  characters(page: $page) {
+    results {
+      id
+      name
+      image
+    }
+    info {
+      next
+      prev
+    }
+  }
+}
+
+query GetCharacterDetail($id: ID!) {
+  character(id: $id) {
+    id
+    name
+    status
+    species
+    gender
+    origin {
+      name
+    }
+    location {
+      name
+    }
+    image
+  }
+}
